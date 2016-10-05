@@ -1,0 +1,58 @@
+{
+  "name": "hot-and-cold-app-redux",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "./src/index.js",
+  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "babel-register": "^6.16.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "npm run clean && npm run build:html && npm run build:css && npm run server",
+    "server": "concurrently \"webpack -w\" \"nodemon server/server.js\"",
+    "test": "mocha --compilers js:babel-register test/**/*.js*",
+    "clean": "rm -rf build",
+    "build:html": "mkdir -p build && cp index.html build",
+    "build:css": "mkdir -p build && cp css/style.css build"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0",
+    "react": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "webpack": "^1.13.2"
+  },
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lavioli/redux-hot-and-cold-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lavioli/redux-hot-and-cold-app/issues"
+  },
+  "homepage": "https://github.com/Lavioli/redux-hot-and-cold-app#readme"
+}
